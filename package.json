@@ -21,7 +21,8 @@
   "homepage": "https://github.com/goraria/node#readme",
   "description": "",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "express-handlebars": "^8.0.1"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
