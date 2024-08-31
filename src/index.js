@@ -2,10 +2,7 @@ const path = require('path')
 const express = require('express')
 // import express from 'express'
 const morgan = require('morgan')
-const handlebars = require('express-handlebars').create({
-    defaultLayout: 'main',
-    extname: '.hbs'
-})
+const handlebars = require('express-handlebars')
 // import handlebars from 'express-handlebars' // exphbs
 const app = express()
 const port = 3000
@@ -14,7 +11,14 @@ const port = 3000
 app.use(morgan('combined'))
 
 // Template engine
-app.engine('.hbs', handlebars.engine())
+// handlebars.create({
+//     defaultLayout: 'main',
+//     extname: '.hbs'
+// })
+app.engine('.hbs', handlebars.engine({
+    defaultLayout: 'main',
+    extname: '.hbs'
+}))
 app.set('view engine', '.hbs');
 app.set('views', './resources/views');
 
